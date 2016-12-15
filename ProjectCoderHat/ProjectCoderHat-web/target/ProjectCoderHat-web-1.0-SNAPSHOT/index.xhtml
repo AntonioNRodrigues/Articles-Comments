@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:head>
+        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+        <title>Project CoderHat</title>
+
+    </h:head>
+
+    <h:body>
+
+        <p:tabView id="tbv1" dynamic="true" cache="true">
+            <p:tab title="Articles">
+                <h:form id="formArticle">
+                    <p:growl id="msg0"/>
+                    <h:panelGrid columns="2" cellpadding="10" styleClass="panelGrid" id="grid0">
+
+                        <h:outputLabel/>
+                        <h:inputHidden id="numberArticle" value="#{manBeanArticle.article.id}"/>
+
+                        <h:outputLabel for="nameArticle" value="Article.:"/>
+                        <p:inputText id="nomeArticle" size="40" value="#{manBeanArticle.article.nameArticle}"
+                                     required="true" label="name" placeholder="name"
+                                     requiredMessage="the field [name] is mandatory."/>
+                        <br></br>
+                        <p:inputTextarea rows="10" cols="50" id="contentArticle" value="#{manBeanArticle.article.content}"
+                                     required="true" label="content" placeholder="content"
+                                     requiredMessage="the field [content] is mandatory."/>
+                        <br></br> 
+                        
+                            <p:commandButton value="Save" action="#{manBeanArticle.createArticle}"
+                                            update="@form: formArticle"/>
+
+                       
+                    </h:panelGrid>
+                </h:form>
+            </p:tab>
+        </p:tabView>
+
+        <h:form id="formtable">    
+            <p:growl id="msg1"/>
+            <p:dataTable id="idTabela" var="article" value="#{manBeanArticle.articlesList}"
+                         paginator="true" rows="10" emptyMessage="No articles"
+                         paginatorTemplate="{CurrentPageReport} {PreviousPageLink}
+                         {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
+                         rowsPerPageTemplate="5,10,15">
+
+                <f:facet name="header">List of articles</f:facet>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Name Article"/>
+                    </f:facet>
+                    <h:outputText value="#{article.nameArticle}"/>
+                </p:column>
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="content"/>
+                    </f:facet>
+                    <h:outputText value="#{article.content}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="date"/>
+                    </f:facet>
+                    <h:outputText value="#{article.dateInserction}"/>
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">
+                        <h:outputText value="Operations"/>
+                    </f:facet>
+                    <p:commandButton value="Edit"
+                                     process="@this" update=":tbv1:formArticle" >
+                        <f:setPropertyActionListener target="#{manBeanArticle.article}"
+                                                     value="#{article}"/>
+                      
+                    </p:commandButton>
+                    <p:commandButton value="delete" action="#{manBeanArticle.deleteArticle}"
+                                     update="@form">
+                        <f:setPropertyActionListener target="#{manBeanArticle.article}"
+                                                     value="#{article}"/>
+                    </p:commandButton>
+
+
+                </p:column>
+
+            </p:dataTable>
+
+        </h:form>
+
+    </h:body>
+
+
+</html>
+

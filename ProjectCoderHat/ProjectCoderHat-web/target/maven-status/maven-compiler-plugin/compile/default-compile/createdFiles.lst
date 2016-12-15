@@ -1,0 +1,10 @@
+pt/projectCoderHat/model/entities/Article_.class
+pt/projectCoderHat/model/util/MyFacesContext.class
+pt/projectCoderHat/model/mbeans/ManBeanArticle.class
+pt/projectCoderHat/model/entities/Comment.class
+pt/projectCoderHat/model/DAO/HibernateDAO.class
+pt/projectCoderHat/model/DAO/HibernateInter.class
+pt/projectCoderHat/model/entities/Article.class
+pt/projectCoderHat/model/util/MyPhaseListener.class
+pt/projectCoderHat/model/util/MyHibernateUtil.class
+pt/projectCoderHat/model/entities/Comment_.class

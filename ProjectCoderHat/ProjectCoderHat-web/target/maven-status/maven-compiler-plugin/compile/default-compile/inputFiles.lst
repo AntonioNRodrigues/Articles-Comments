@@ -1,0 +1,8 @@
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/entities/Comment.java
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/util/MyHibernateUtil.java
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/DAO/HibernateInter.java
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/util/MyFacesContext.java
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/entities/Article.java
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/DAO/HibernateDAO.java
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/mbeans/ManBeanArticle.java
+/home/antonio/NetBeansProjects/ProjectCoderHat/ProjectCoderHat-web/src/main/java/pt/projectCoderHat/model/util/MyPhaseListener.java
