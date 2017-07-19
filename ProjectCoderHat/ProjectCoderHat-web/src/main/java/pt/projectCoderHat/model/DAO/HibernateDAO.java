@@ -15,7 +15,10 @@ import org.hibernate.Session;
  */
 public class HibernateDAO<E> implements HibernateInter<E>, Serializable{
     
-    private static final long serial = 1L;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
     
     private Class<E> classe;
     private Session session;        
@@ -68,7 +71,8 @@ public class HibernateDAO<E> implements HibernateInter<E>, Serializable{
      * @param id
      * @return 
      */
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public E getEntry(Serializable id) {
         return (E) session.get(classe, id);
     }
@@ -77,7 +81,8 @@ public class HibernateDAO<E> implements HibernateInter<E>, Serializable{
      * 
      * @return 
      */
-    @Override
+    @SuppressWarnings("unchecked")
+	@Override
     public List<E> getEntities() {
        return (List<E>) session.createCriteria(classe).list();
     }
