@@ -22,7 +22,7 @@ import pt.projectCoderHat.model.util.MyFacesContext;
 @RequestScoped
 public class ManBeanArticle implements Serializable {
 
-    private static final long serial = 1L;
+	private static final long serialVersionUID = 1L;
     private Article article;
     private List<Article> articlesList;
 

@@ -13,7 +13,9 @@ import org.hibernate.SessionFactory;
  */
 public class MyPhaseListener implements PhaseListener {
 
-    @Override
+	private static final long serialVersionUID = 1L;
+
+	@Override
     public void beforePhase(PhaseEvent event) {
         System.out.printf("MyPhaseListener: afterPhase %s", event.getPhaseId());
         if (event.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
